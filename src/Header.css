@@ -1,0 +1,31 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.header__icon{
+    object-fit: contain;
+    height: 100px;
+    margin-left: 18px;
+}
+.header__btn{
+    border-radius: 3rem;
+    justify-content: space-between;
+    width: 400px;
+    align-items: center;
+}
+.header__btncontainer{
+    display: flex;
+}
+.header__btntext{
+    margin-left: 2px;
+    font-size:  14px;
+   
+} 
+.header__btnimg{
+    height: 30px;
+    width: 30px;
+    border-radius: 1rem;
+    
+    
+}
