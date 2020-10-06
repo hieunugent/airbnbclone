@@ -8,7 +8,7 @@ function Home() {
         <Banner />
         <div className="home__cards">
           <Card
-            image="https://www.exploregeorgia.org/sites/default/files/legacy_images/yurt-camping-at-high-falls-state-park-1496153710.jpg"
+            image="https://a0.muscache.com/im/pictures/acd80ac8-d902-4d5f-848d-6e1f0d76f0b9.jpg?"
             title="Unique stays"
             description="Spaces that are mode than just a place to sleep"
           />
@@ -30,3 +30,5 @@ function Home() {
 export default Home
 
 // "https://a0.muscache.com/im/pictures/18084f37-67e0-400f-bfd8-55eea0e89508.jpg?im_w=1200 1x"
+
+{/* <source srcset="https://a0.muscache.com/im/pictures/acd80ac8-d902-4d5f-848d-6e1f0d76f0b9.jpg?im_w=720 2x" media="(max-width: 743px)"> */}
