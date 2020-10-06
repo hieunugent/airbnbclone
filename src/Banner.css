@@ -1,0 +1,23 @@
+.banner{
+    background: url("https://a0.muscache.com/im/pictures/18084f37-67e0-400f-bfd8-55eea0e89508.jpg") center center;
+    height: 80vh;
+    position: relative;
+}
+.banner__info{
+    width: 30vw;
+    padding-top: 25vh;
+    padding-left: 50px;
+    padding-right: auto;
+    padding-bottom: 40px;
+}
+.banner__info > h2, h6 {
+  color: white;   
+}
+.banner__infoBtn{
+    margin-top: 5px !important;
+    color: black !important;
+    background-color: white !important;
+    border: 1px solid white !important;
+    border-radius: 1rem !important;
+    text-transform: inherit !important;
+}

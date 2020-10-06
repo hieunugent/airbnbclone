@@ -1,0 +1,10 @@
+.home__cards{
+    display: flex;
+    flex-direction: row;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    align-content: center;
+    justify-content: space-evenly ;
+    padding: 30px 60px 30px ;
+  
+}
