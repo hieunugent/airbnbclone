@@ -7,6 +7,7 @@ import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Avatar, Button } from "@material-ui/core";
 import DatePicker from "./DatePicker";
+import SearchBar from "./SearchBar";
 function Header() {
   const [searchinfo, setSearchinfo] = useState(false);
 
@@ -46,7 +47,7 @@ function Header() {
           </div>
         </div>
       </div>
-      <div>{searchinfo && <DatePicker />}</div>
+      <div><SearchBar /></div>
     </>
   );
 }
