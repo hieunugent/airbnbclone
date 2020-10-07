@@ -1,14 +1,17 @@
-
-import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./Header.css"
-import Image from 'react-bootstrap/Image'
-import LanguageIcon from '@material-ui/icons/Language';
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
-import MenuIcon from '@material-ui/icons/Menu';
-import { Avatar, Button } from '@material-ui/core';
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./Header.css";
+import Image from "react-bootstrap/Image";
+import LanguageIcon from "@material-ui/icons/Language";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+import MenuIcon from "@material-ui/icons/Menu";
+import { Avatar, Button } from "@material-ui/core";
+import DatePicker from "./DatePicker";
 function Header() {
-    return (
+  const [searchinfo, setSearchinfo] = useState(false);
+
+  return (
+    <>
       <div className="header">
         <div className="header__left">
           <img
@@ -17,7 +20,7 @@ function Header() {
             alt=""
           />
         </div>
-        <button className="header__center">
+        <button className="header__center" onClick={()=> setSearchinfo(!searchinfo)}>
           <div className="header__btntext">
             <p> Start your search </p>
           </div>
@@ -43,7 +46,9 @@ function Header() {
           </div>
         </div>
       </div>
-    );
+      <div>{searchinfo && <DatePicker />}</div>
+    </>
+  );
 }
 
-export default Header
+export default Header;

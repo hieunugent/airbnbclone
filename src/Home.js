@@ -5,6 +5,7 @@ import Card from "./Card";
 function Home() {
     return (
       <div className="home">
+        
         <Banner />
         <div className="home__cards">
           <Card
