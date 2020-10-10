@@ -53,14 +53,18 @@
     font-size:  15px;
     font-weight: bold;
     align-items: center;
-    
+   
 } 
 
-.header__btnimg{
-    height: 40px;
-    width: 40px;
+.header__btnicon{
+    background-color:#FF5A5F  ;
+    color: white;
+    height: 40px !important;
+    width: 40px !important;
     border-radius: 2rem;
-    flex:0;
+    padding-top: 5px;
+    align-items: center;
+    flex:0.15;
 }
 .header__right{
 

@@ -45,7 +45,7 @@
 }
 .search__local:hover{
     border-right: none;
-
+}
 .search_checkin{
       border-left: 1px solid gray ;
       border-right: 1px solid gray ;
@@ -62,7 +62,7 @@
 .search__icon {
     margin-left: 5px;
     font-size: larger;
-    background-color: #E41D5D !important;
+    background-color: #FF5A5F !important;
     color: aliceblue !important;
     padding: 15px 20px;
     border-radius: 3rem;
