@@ -42,21 +42,19 @@
     color:  gray;
 }
 .search__local{
-    /* border-right: 1px solid gray ; */
+    border-right: 1px solid gray ;
     padding-left: 15px;
     width: 100%;
     padding-right: 40px;
     font-size: small;
-    @if (.search_checkin:hover){
-         border-right: none;
-    }
+  
 }
 .search__local:hover{
     border-right: none;
 }
 .search_checkin{
       font-size: small;
-      border-left: 1px solid gray ;
+      /* border-left: 1px solid gray ; */
       border-right: 1px solid gray ;
       width: 100%;
       padding-left: 15px;
@@ -73,7 +71,9 @@
     flex-direction: row;
     
 }
-
+.removeborder{
+    border: none;
+}
 .search__guest > h5{
     font-size: small;
     

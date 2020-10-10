@@ -13,7 +13,7 @@ const [endDate, setEndDate] = useState(new Date());
 const [localborder, setLocalborder]= useState(false);
 const [checkInborder, setBorderCheckin]=useState(false);
 const [checkOutborder, setBorderCheckOut] = useState(false);
-const [guestBorder, setBorderGuest] = useState(false);
+
 const selectionRange = {
   startDate: startDate,
   endDate: endDate,
@@ -24,22 +24,35 @@ function handleSelect(ranges) {
   setEndDate(ranges.selection.endDate);
 }
 const handleoverLocal=()=>{
-   setLocalborder(true);
+   setLocalborder(true);  
+   setBorderCheckin(false);
+   setBorderCheckOut(false);
 }
 const handleoverCheckin=()=>{
-setBorderCheckin(true);
+   setLocalborder(true);
+   setBorderCheckin(true);
+   setBorderCheckOut(false);
 }
 const handleoverCheckOut=()=>{
-setBorderCheckOut(true);
+  setBorderCheckOut(true);
+  setLocalborder(false);
+  setBorderCheckin(true); 
 }
 const handleoverGuest = () => {
-  setBorderGuest(true);
+    setBorderCheckOut(true);
+   setLocalborder(false);
+   setBorderCheckin(false); 
 };
+const handleleaveSearchbar=()=> {
+  setBorderCheckOut(false);
+  setLocalborder(false);
+  setBorderCheckin(false);
+}
     return (
-      <>
+      <div onMouseLeave={handleleaveSearchbar}>
         <div className="searchbar">
-          <div className="searchbar__items local">
-            <h5 className={`search__local `} onMouseOver={handleoverLocal}>
+          <div className="searchbar__items local" onMouseOver={handleoverLocal}>
+            <h5 className={`search__local ${localborder && "removeborder"} `}>
               Location
               <br />
               <span className="searchbar_label"> Where are you going?</span>
@@ -49,8 +62,9 @@ const handleoverGuest = () => {
           <div
             className="searchbar__items check"
             onClick={(e) => setdateRange(!setdate)}
+            onMouseOver={handleoverCheckin}
           >
-            <h5 className="search_checkin" onMouseOver={handleoverCheckin}>
+            <h5 className={`search_checkin ${checkInborder && "removeborder"}`}>
               Check in
               <br />
               <span className="searchbar_label">Add dates</span>
@@ -60,17 +74,25 @@ const handleoverGuest = () => {
           <div
             className="searchbar__items check"
             onClick={(e) => setdateRange(!setdate)}
+            onMouseOver={handleoverCheckOut}
           >
-            <h5 className="search_checkin" onMouseOver={handleoverCheckOut}>
+            <h5
+              className={`search_checkin ${checkOutborder && "removeborder"}`}
+            >
               Check out
               <br />
               <span className="searchbar_label">Add dates</span>
             </h5>
           </div>
 
-          <div className="searchbar__items guestnum">
-            <div className="search__guest">
-              <h5 onMouseOver={handleoverGuest}>
+          <div
+            className="searchbar__items guestnum"
+            onMouseOver={handleoverGuest}
+          >
+            <div
+              className={`search__guest ${checkOutborder && "removeborder"}`}
+            >
+              <h5>
                 Guest
                 <br />
                 <span className="searchbar_label">Add guests</span>
@@ -92,8 +114,7 @@ const handleoverGuest = () => {
             />
           )}
         </div>
-        =
-      </>
+      </div>
     );
 }
 
