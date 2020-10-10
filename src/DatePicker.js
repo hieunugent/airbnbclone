@@ -15,6 +15,9 @@ function DatePicker() {
         setStartDate(ranges.selection.startDate);
         setEndDate(ranges.selection.endDate);
     }
+
+   console.log("STart Date is >>>>" + startDate);
+   console.log("eng Date is >>>>" +  endDate);
     return (
       <div className="datepicker">
         <DateRangePicker

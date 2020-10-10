@@ -9,7 +9,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     object-fit: contain;
-    
+    height: 70px;
 }
 .local{
     flex:0.4;
@@ -22,13 +22,14 @@
 }
 .searchbar__items{
    
-    min-width: 20% ;
+    /* min-width: 20% ; */
     border-radius: 3rem;
     object-fit: contain;
     padding: 10px 0px 10px ;
     align-items: center;  
     display: flex;
     flex-direction: row;
+    font-size: small;
    
 }
 .searchbar__items:hover{
@@ -42,11 +43,13 @@
     padding-left: 15px;
     width: 100%;
     padding-right: 40px;
+    font-size: small;
 }
 .search__local:hover{
     border-right: none;
 }
 .search_checkin{
+      font-size: small;
       border-left: 1px solid gray ;
       border-right: 1px solid gray ;
       width: 100%;
@@ -54,14 +57,18 @@
       padding-right: 50px;
 }
 .search_checkin:hover{
-    border-right: none;
+    border-right: none;  
 }
 .search__guest{
     padding-left: 10px;
+    padding-right: 10px;
+    
+}
+.search__guest > h5{
+    font-size: small;
 }
 .search__icon {
     margin-left: 5px;
-    font-size: larger;
     background-color: #FF5A5F !important;
     color: aliceblue !important;
     padding: 15px 20px;
