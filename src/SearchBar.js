@@ -4,6 +4,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import { Calendar, DateRangePicker } from "react-date-range";
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
+import LocationPickerExample from "./LocationPicker"
 function SearchBar() {
 
 const [setdate, setdateRange]= useState(false);
@@ -48,10 +49,11 @@ const handleleaveSearchbar=()=> {
   setLocalborder(false);
   setBorderCheckin(false);
 }
+const [openLocation , setOpenLocation]= useState(false);
     return (
       <div onMouseLeave={handleleaveSearchbar}>
         <div className="searchbar">
-          <div className="searchbar__items local" onMouseOver={handleoverLocal}>
+          <div className="searchbar__items local" onMouseOver={handleoverLocal} onClick={e => setOpenLocation(true)}>
             <h5 className={`search__local ${localborder && "removeborder"} `}>
               Location
               <br />
@@ -105,6 +107,7 @@ const handleleaveSearchbar=()=> {
           </div>
         </div>
         <div>
+           {openLocation&& "this is your location "}
           {setdate && (
             <DateRangePicker
               ranges={[selectionRange]}

@@ -41,6 +41,63 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.header__centerLink{
+    margin-top: 10px  !important;
+   
+    background-color: white !important;
+    display: flex !important;
+    max-width: 40% !important;
+    min-width: 200px !important;
+    width: 400px !important;
+    height: 50px !important;
+    align-items: center !important;
+    align-items: center !important;
+    justify-content: space-between !important ;
+    align-items: center !important;
+    padding-left: 20px  !important; 
+    padding-right: 10px !important;
+    flex:1 !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+.link_drawer {
+   color: rgb(41, 40, 40) !important;
+   padding-bottom: 5px;
+   position: relative;
+   display: inline-block;
+}
+.link_drawer:hover::before {
+    content: "";
+    border-bottom: 2px solid black !important;
+    position: absolute !important;
+    width: 5px !important;
+    bottom: 0 !important;
+    left: 45% !important;
+    align-items: center;
+}
+.active::before{
+    content: "";
+    border-bottom: 2px solid black !important;
+    position: absolute !important;
+    width: 20px !important;
+    bottom: 0 !important;
+    left: 40% !important;
+    align-items: center;
+}
+.active:hover::before{
+  content: "";
+    border-bottom: 2px solid black !important;
+    position: absolute !important;
+    width: 20px !important;
+    bottom: 0 !important;
+    left: 40% !important;
+    align-items: center;
+}
+
+.link_drawer:hover{
+    text-decoration: none !important;
+}
+
 .header__center:hover{
     box-shadow: 0 1px rgba(66, 65, 68, 0.09),
                 0 6px rgba(122, 121 , 126, 0.1)   
