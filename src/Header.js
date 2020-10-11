@@ -14,12 +14,15 @@ function Header() {
   const [placeToStay, setPlaceToStay] = useState(false);
    const [experience, setExperiences] = useState(false);
     const [onlineExp, setOnlineExp] = useState(false);
+
+    
+  
   return (
     <>
       <div className="header">
-        <div className="header__left">
+        <div className="header__left" onclick={(e) => setSearchinfo(false)}>
           <img
-            className="header__icon "
+            className="header__icon"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/1024px-Airbnb_Logo_B%C3%A9lo.svg.png"
             alt=""
           />
@@ -27,7 +30,9 @@ function Header() {
 
         <button
           className="header__center"
-          onClick={() => setSearchinfo(!searchinfo)}
+          onClick={() => {
+            setSearchinfo(!searchinfo);
+          }}
         >
           <div className="header__btntext">
             <p> Start your search </p>
@@ -53,9 +58,9 @@ function Header() {
         </div>
       </div>
 
-      <Drawer anchor="top" open={searchinfo}>
-        <div className="header">
-          <div className="header__left ">
+      <Drawer anchor="top" open={searchinfo} >
+        <div className="headerdraw" onClick={e=> {setSearchinfo(false)}}>
+          <div className="header__left " >
             <img
               className="header__icon "
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/1024px-Airbnb_Logo_B%C3%A9lo.svg.png"
@@ -65,19 +70,31 @@ function Header() {
           <div className="header__centerLink">
             <Link
               className={`link_drawer ${placeToStay && "active"}`}
-              onClick={(e) => {setPlaceToStay(!placeToStay); setExperiences(false); setOnlineExp(false);} }
+              onClick={(e) => {
+                setPlaceToStay(!placeToStay);
+                setExperiences(false);
+                setOnlineExp(false);
+              }}
             >
               Place to Stay{" "}
             </Link>
             <Link
               className={`link_drawer ${experience && "active"}`}
-              onClick={(e) =>{ setExperiences(!experience); setPlaceToStay(false); setOnlineExp(false);}}
+              onClick={(e) => {
+                setExperiences(!experience);
+                setPlaceToStay(false);
+                setOnlineExp(false);
+              }}
             >
               Expreriences{" "}
             </Link>
             <Link
               className={`link_drawer ${onlineExp && "active"}`}
-              onClick={(e) =>{ setOnlineExp(!onlineExp ); setPlaceToStay(false); setExperiences(false); }}
+              onClick={(e) => {
+                setOnlineExp(!onlineExp);
+                setPlaceToStay(false);
+                setExperiences(false);
+              }}
             >
               Online Expreriences{" "}
             </Link>
