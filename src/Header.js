@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Header.css";
-import Image from "react-bootstrap/Image";
+
 import LanguageIcon from "@material-ui/icons/Language";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import MenuIcon from "@material-ui/icons/Menu";
-import { Avatar, Button, Drawer, Link } from "@material-ui/core";
+import { Avatar, Drawer, Link } from "@material-ui/core";
 
 import SearchBar from "./SearchBar";
 import SearchIcon from "@material-ui/icons/Search";
