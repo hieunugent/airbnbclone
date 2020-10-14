@@ -14,7 +14,7 @@ const [endDate, setEndDate] = useState(new Date());
 const [localborder, setLocalborder]= useState(false);
 const [checkInborder, setBorderCheckin]=useState(false);
 const [checkOutborder, setBorderCheckOut] = useState(false);
-
+const [displayGuestnum, setGuestNumber] = useState(false);
 const selectionRange = {
   startDate: startDate,
   endDate: endDate,
@@ -93,6 +93,7 @@ const [openLocation , setOpenLocation]= useState(false);
           >
             <div
               className={`search__guest ${checkOutborder && "removeborder"}`}
+              onClick={e => setGuestNumber(!displayGuestnum)}
             >
               <h5>
                 Guest
@@ -107,7 +108,8 @@ const [openLocation , setOpenLocation]= useState(false);
           </div>
         </div>
         <div>
-           {openLocation&& "this is your location "}
+          {displayGuestnum&& " this is guest number display"}
+          {openLocation&& "this is your location "}
           {setdate && (
             <DateRangePicker
               ranges={[selectionRange]}
