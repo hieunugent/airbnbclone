@@ -1,10 +1,11 @@
 import React,{useState}from 'react'
 import "./SearchBar.css"
 import SearchIcon from "@material-ui/icons/Search";
-import { Calendar, DateRangePicker } from "react-date-range";
+import { DateRangePicker } from "react-date-range";
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
-import LocationPickerExample from "./LocationPicker"
+import Guest from './Guest';
+
 function SearchBar() {
 
 const [setdate, setdateRange]= useState(false);
@@ -51,13 +52,24 @@ const handleleaveSearchbar=()=> {
 }
 const [openLocation , setOpenLocation]= useState(false);
     return (
-      <div onMouseLeave={handleleaveSearchbar}>
+      <div className="search__area" onMouseLeave={handleleaveSearchbar}>
         <div className="searchbar">
-          <div className="searchbar__items local" onMouseOver={handleoverLocal} onClick={e => setOpenLocation(true)}>
+          <div
+            className="searchbar__items local"
+            onMouseOver={handleoverLocal}
+            onClick={(e) => setOpenLocation(!openLocation)}
+          >
             <h5 className={`search__local ${localborder && "removeborder"} `}>
               Location
               <br />
-              <span className="searchbar_label"> Where are you going?</span>
+            
+              <input
+                className="searchbar_label"
+                type="text"
+                id="location"
+                name="locationDestination"
+                placeholder="Where are you going?"
+              />
             </h5>
           </div>
 
@@ -93,7 +105,7 @@ const [openLocation , setOpenLocation]= useState(false);
           >
             <div
               className={`search__guest ${checkOutborder && "removeborder"}`}
-              onClick={e => setGuestNumber(!displayGuestnum)}
+              onClick={(e) => setGuestNumber(!displayGuestnum)}
             >
               <h5>
                 Guest
@@ -107,11 +119,17 @@ const [openLocation , setOpenLocation]= useState(false);
             </div>
           </div>
         </div>
-        <div>
-          {displayGuestnum&& " this is guest number display"}
-          {openLocation&& "this is your location "}
+        <div className="searchbar__detail">
+          {displayGuestnum && (
+            <div className="searchGuest">
+              {" "}
+              <Guest />
+            </div>
+          )}
+          {openLocation && "this is your location "}
           {setdate && (
             <DateRangePicker
+              className="searchDate"
               ranges={[selectionRange]}
               onChange={handleSelect}
               color="#19575C"

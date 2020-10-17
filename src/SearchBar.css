@@ -3,13 +3,22 @@
     border-radius: 3rem;
     display: flex;
     flex-direction: row;
-    width: 75%;
+    width: 100%;
     align-items: center;
-    margin-left: 10%;
+   
     margin-top: 10px;
     margin-bottom: 10px;
     object-fit: contain;
     height: 70px;
+}
+.search__area{
+   display: flex;
+   margin-left: 10%;
+   padding: 20px;
+   flex-direction: column;
+   background-color: transparent;
+   width: 80%;
+   align-items: center;
 }
 .local{
     flex:0.4;
@@ -40,7 +49,10 @@
 }
 .searchbar_label{
     color:  gray;
+    border: none;
+    background-color: transparent;
 }
+
 .search__local{
     border-right: 1px solid gray ;
     padding-left: 15px;
@@ -51,6 +63,10 @@
 }
 .search__local:hover{
     border-right: none;
+}
+.searchGuest{
+    
+    margin-left: 65%;
 }
 .search_checkin{
       font-size: small;
