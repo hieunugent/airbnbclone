@@ -57,10 +57,9 @@ function SearchBar() {
     guestSearch: false,
   });
 
-  const handleClickSet = ()=> {
 
-  }
-  const [openLocation, setOpenLocation] = useState(false);
+  
+ 
   return (
     <div className="search__area" onMouseLeave={handleleaveSearchbar}>
       <div className="searchbar">
